@@ -15,7 +15,7 @@ Server.route({
     }
 });
 
-// don't start server if this file was required YESSSSS
+// don't start server if this file 
 
 if (!module.parent) {
 
