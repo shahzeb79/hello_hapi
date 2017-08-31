@@ -1,25 +1,9 @@
-#!/usr/bin/env groovy
+node {
 
-pipeline {
+  stage 'Build'
+  sh("npm install")
 
-    agent {
-        docker {
-            image 'node'
-        }
-    }
+  stage 'Run test'
+  sh("npm test")
 
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building...'
-                sh 'npm install'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing...'
-                sh 'npm test'
-            }
-        }
-    }
 }
